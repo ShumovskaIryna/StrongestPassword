@@ -1,0 +1,13 @@
+.errors{
+    position: absolute;
+    align-items: flex-start;
+    font-size: 14px;
+    width: 320px;
+    color:rgb(220, 161, 255);
+}
+
+.form-control{
+    position: relative;
+    align-items: flex-start;
+    width: 320px;
+}
