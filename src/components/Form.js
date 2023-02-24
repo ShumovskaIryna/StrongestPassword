@@ -44,6 +44,11 @@ const Form = () => {
           required
         />
         {isError !== null && <div class="errors">{isError}</div>}
+        <button 
+            className="btn btn-outline-info btn-lg mt-4" 
+            type="submit"> 
+            Submit password 
+        </button>
       </form>
     </div>
   );
