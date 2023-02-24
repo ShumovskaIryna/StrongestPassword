@@ -16,9 +16,24 @@ const Form = () => {
     setError(null);
     if (password.length < 8) {
       setError(
-        "Password should contain minimum 4 characters, number and special character: @$! % * ? &"
+        "Password should contain minimum 4 letter, number and special character: @$! % * ? &"
       );
       return;
+    } else {
+        let caps = (password.match(/[A-Z]/g) || []).length;
+        let small = (password.match(/[a-z]/g) || []).length;
+        let num = (password.match(/[0-9]/g) || []).length;
+        let specialSymbol = (password.match(/\W/g) || []).length;
+        if (small < 1 && caps < 1) {
+            setError("Must add one letter");
+            return;
+        } else if (num < 1) {
+            setError("Must add one number");
+            return;
+        } else if (specialSymbol < 1) {
+            setError("Must add one symbol: @$! % * ? &");
+            return;
+        }
     }
   };
 
@@ -45,7 +60,7 @@ const Form = () => {
         />
         {isError !== null && <div class="errors">{isError}</div>}
         <button 
-            className="btn btn-outline-info btn-lg mt-4" 
+            className="btn btn-outline-info btn-lg mt-5" 
             type="submit"> 
             Submit password 
         </button>
