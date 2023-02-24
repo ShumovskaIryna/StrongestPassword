@@ -13,9 +13,18 @@ const Form = () => {
     });
   };
 
+  const onSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      e.persist();
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return (
     <div className="center">
-      <form>
+      <form onSubmit={onSubmit}>
         <input
           type="password"
           id="password"
