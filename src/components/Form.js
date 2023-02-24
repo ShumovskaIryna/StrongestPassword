@@ -14,16 +14,17 @@ const Form = () => {
       password: e.target.value,
     });
     setError(null);
+    let caps, small, num, specialSymbol;
     if (password.length < 8) {
       setError(
-        "Password should contain minimum 4 letter, number and special character: @$! % * ? &"
+        "Password should contain minimum 8 letter, number and special character: @$! % * ? &"
       );
       return;
     } else {
-        let caps = (password.match(/[A-Z]/g) || []).length;
-        let small = (password.match(/[a-z]/g) || []).length;
-        let num = (password.match(/[0-9]/g) || []).length;
-        let specialSymbol = (password.match(/\W/g) || []).length;
+        caps = (password.match(/[A-Z]/g) || []).length;
+        small = (password.match(/[a-z]/g) || []).length;
+        num = (password.match(/[0-9]/g) || []).length;
+        specialSymbol = (password.match(/\W/g) || []).length;
         if (small < 1 && caps < 1) {
             setError("Must add one letter");
             return;
