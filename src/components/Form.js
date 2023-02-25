@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Form.css'
+import PasswordIndicator from "./PasswordIndicator";
 
 const Form = () => {
   const [passwordInput, setPasswordInput] = useState({
@@ -59,6 +60,7 @@ const Form = () => {
           onChange={onChange}
           required
         />
+        <PasswordIndicator />
         {isError !== null && <div class="errors">{isError}</div>}
         <button 
             className="btn btn-outline-info btn-lg mt-5" 
