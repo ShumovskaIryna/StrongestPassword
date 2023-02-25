@@ -60,7 +60,7 @@ const Form = () => {
           onChange={onChange}
           required
         />
-        <PasswordIndicator />
+        <PasswordIndicator password={passwordInput.password}/>
         {isError !== null && <div class="errors">{isError}</div>}
         <button 
             className="btn btn-outline-info btn-lg mt-5" 
