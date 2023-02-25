@@ -42,19 +42,17 @@ const PasswordIndicator = ( props ) => {
     <>
       <div className="wrapper">
         <progress
-          className="indicator-bar"
+          className={`indicator-bar strength-${pwdChecker().val}`}
+          value={pwdChecker().strength}
           max="3"
         />
-          {props.password && (
-              <p className="label">
-              Your password is <strong>{pwdChecker().val} </strong>
-              </p>
-          )}
+        {props.password && (
+          <p className={`label strength-${pwdChecker().val}`}>
+            Your password is <strong>{pwdChecker().val} </strong>
+          </p>
+        )}
       </div>
     </>
   );
 };
 export default PasswordIndicator;
-
-
-
