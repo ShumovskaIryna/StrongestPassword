@@ -1,12 +1,30 @@
 import React, { useState } from "react";
 import './Form.css'
 import PasswordIndicator from "./PasswordIndicator";
+import { Icon } from 'react-icons-kit'
+import {view} from 'react-icons-kit/ikons/view'
+import {view_off} from 'react-icons-kit/ikons/view_off'
 
 const Form = () => {
   const [passwordInput, setPasswordInput] = useState({
     password: "",
   });
   const [isError, setError] = useState(null);
+
+
+  const [type, setType]=useState('password');
+  const [icon, setIcon]=useState(view_off);
+
+  const handleToggle=()=>{    
+    if(type==='password'){
+      setIcon(view);      
+      setType('text');
+    }
+    else{
+      setIcon(view_off);     
+      setType('password');
+    }
+  }
 
   const onChange = (e) => {
     const password = e.target.value;
@@ -39,35 +57,23 @@ const Form = () => {
     }
   };
 
-  const onSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      e.persist();
-    } catch (error) {
-      throw error;
-    }
-  };
-
   return (
     <div className="center">
-      <form onSubmit={onSubmit}>
+      <div className="inputBox">
         <input
-          type="password"
+          type={type}
           id="password"
           name="password"
-          className="form-control shadow-none"
           placeholder="Password"
           onChange={onChange}
           required
         />
-        <PasswordIndicator password={passwordInput.password}/>
+        <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
+      </div>
+      <div className="indicatorBox">
         {isError !== null && <div class="errors">{isError}</div>}
-        <button 
-            className="btn btn-outline-info btn-lg mt-5" 
-            type="submit"> 
-            Submit password 
-        </button>
-      </form>
+        <PasswordIndicator password={passwordInput.password}/>
+      </div>
     </div>
   );
 };
