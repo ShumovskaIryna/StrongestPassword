@@ -3,7 +3,8 @@
     align-items: flex-start;
     font-size: 14px;
     width: 320px;
-    color:rgb(220, 161, 255);
+    color:rgb(255, 230, 0);
+    filter: drop-shadow(0 0 3px rgb(255, 255, 255)) drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 .inputBox{
     width: 330px;
@@ -14,7 +15,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    box-shadow: #111 0px 5px 15px;  
   } 
   .indicatorBox{
     width: 330px;
