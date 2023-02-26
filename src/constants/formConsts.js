@@ -9,7 +9,7 @@ const PASSWORD_PROPERTIES = {
     },
     PASSWORD_LENGTH: {
         EMPTY: 0,
-        MIN_LENGTH: 7,
+        MIN_LENGTH: 8,
     },
     STRENGTH_INCREMENTOR: 1,
 }
