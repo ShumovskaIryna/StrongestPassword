@@ -1,16 +1,16 @@
-import React from "react";
-import "./PasswordIndicator.css";
-import { validateRegex, PASSWORD_PROPERTIES } from "../constants/formConsts";
+import React from 'react';
+import './PasswordIndicator.css';
+import { validateRegex, PASSWORD_PROPERTIES } from '../constants/formConsts';
 
-const PasswordIndicator = (props) => {
-  const { password = "" } = props;
+function PasswordIndicator(props) {
+  // eslint-disable-next-line react/prop-types
+  const { password = '' } = props;
 
   /**
    *
-   * @param {string} password
    * @return {number}
    */
-  const getPasswordStrength = (password) => {
+  const getPasswordStrength = () => {
     let passwordStrength = 0;
 
     validateRegex.forEach((regex) => {
@@ -33,11 +33,10 @@ const PasswordIndicator = (props) => {
   };
   /**
    *
-   * @param {string} password
    * @returns {object}
    */
-  const passwordChecker = (password) => {
-    const passwordStrength = getPasswordStrength(password);
+  const passwordChecker = () => {
+    const passwordStrength = getPasswordStrength();
 
     switch (passwordStrength) {
       case 0:
@@ -71,21 +70,20 @@ const PasswordIndicator = (props) => {
     }
   };
 
-  const { val, strength } = passwordChecker(password);
-
+  const { val, strength } = passwordChecker();
   return (
-    <>
-      <div className="wrapper">
-        <div className="label-box">
-          {props.password && (
-            <p className={`label strength-${val}`}>
-              Your password is <strong>{val}</strong>
-            </p>
-          )}
-        </div>
-        <progress className={`indicator-bar strength-${val}`} value={strength} max="3" />
+    <div className="wrapper">
+      <div className="label-box">
+        {password && (
+        <p className={`label strength-${val}`}>
+          Your password is
+          {' '}
+          <strong>{val}</strong>
+        </p>
+        )}
       </div>
-    </>
+      <progress className={`indicator-bar strength-${val}`} value={strength} max="3" />
+    </div>
   );
-};
+}
 export default PasswordIndicator;
