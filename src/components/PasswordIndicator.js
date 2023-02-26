@@ -77,11 +77,13 @@ const PasswordIndicator = ( props ) => {
   return (
     <>
       <div className="wrapper">
-        {props.password && (
-          <p className={`label strength-${val}`}>
-            Your password is <strong>{val} </strong>
-          </p>
-        )}
+        <div className="label-box">
+          {props.password && (
+            <p className={`label strength-${val}`}>
+              Your password is <strong>{val}</strong>
+            </p>
+          )}
+        </div>
         <progress
           className={`indicator-bar strength-${val}`}
           value={strength}
