@@ -1,11 +1,11 @@
-const validateRegex = ["[a-zA-Z]", "[0-9]", "\\W"];
+const validateRegex = ['[a-zA-Z]', '[0-9]', '\\W'];
 
 const PASSWORD_PROPERTIES = {
   PASSWORD_STRENGTH: {
-    EMPTY: "",
-    EASY: "easy",
-    MEDIUM: "medium",
-    STRONG: "strong",
+    EMPTY: '',
+    EASY: 'easy',
+    MEDIUM: 'medium',
+    STRONG: 'strong',
   },
   PASSWORD_LENGTH: {
     EMPTY: 0,

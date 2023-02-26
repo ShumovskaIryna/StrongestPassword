@@ -1,25 +1,28 @@
-import React, { useState } from "react";
-import "./Form.css";
-import PasswordIndicator from "./PasswordIndicator";
-import { Icon } from "react-icons-kit";
-import { view } from "react-icons-kit/ikons/view";
-import { view_off } from "react-icons-kit/ikons/view_off";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState } from 'react';
+import './Form.css';
+import { Icon } from 'react-icons-kit';
+import { view } from 'react-icons-kit/ikons/view';
+// eslint-disable-next-line camelcase
+import { view_off } from 'react-icons-kit/ikons/view_off';
+import PasswordIndicator from './PasswordIndicator';
 
-const Form = () => {
+function Form() {
   const [passwordInput, setPasswordInput] = useState({
-    password: "",
+    password: '',
   });
   const [isError, setError] = useState(null);
-  const [type, setType] = useState("password");
+  const [type, setType] = useState('password');
   const [icon, setIcon] = useState(view_off);
 
   const handleToggle = () => {
-    if (type === "password") {
+    if (type === 'password') {
       setIcon(view);
-      setType("text");
+      setType('text');
     } else {
       setIcon(view_off);
-      setType("password");
+      setType('password');
     }
   };
 
@@ -30,24 +33,21 @@ const Form = () => {
       password: e.target.value,
     });
     setError(null);
-    let caps, small, num, specialSymbol;
+    let caps; let small; let num; let
+      specialSymbol;
     if (password.length < 8) {
-      setError("Password should contain minimum 8 letter, number and special character: @$! % * ? &");
-      return;
+      setError('Password should contain minimum 8 letter, number and special character: @$! % * ? &');
     } else {
       caps = (password.match(/[A-Z]/g) || []).length;
       small = (password.match(/[a-z]/g) || []).length;
       num = (password.match(/[0-9]/g) || []).length;
       specialSymbol = (password.match(/\W/g) || []).length;
       if (small < 1 && caps < 1) {
-        setError("Must add one letter");
-        return;
+        setError('Must add one letter');
       } else if (num < 1) {
-        setError("Must add one number");
-        return;
+        setError('Must add one number');
       } else if (specialSymbol < 1) {
-        setError("Must add one symbol: @$! % * ? &");
-        return;
+        setError('Must add one symbol: @$! % * ? &');
       }
     }
   };
@@ -62,10 +62,10 @@ const Form = () => {
         </span>
       </div>
       <div className="indicatorBox">
-        {isError !== null && <div class="errors">{isError}</div>}
+        {isError !== null && <div className="errors">{isError}</div>}
         <PasswordIndicator password={passwordInput.password} />
       </div>
     </div>
   );
-};
+}
 export default Form;
