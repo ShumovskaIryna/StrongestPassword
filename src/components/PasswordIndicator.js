@@ -2,13 +2,13 @@ import React from "react";
 import "./PasswordIndicator.css";
 import { validateRegex, PASSWORD_PROPERTIES } from "../constants/formConsts";
 
-const PasswordIndicator = ( props ) => {
-  const { password = '' } = props;
+const PasswordIndicator = (props) => {
+  const { password = "" } = props;
 
   /**
-   * 
+   *
    * @param {string} password
-   * @return {number} 
+   * @return {number}
    */
   const getPasswordStrength = (password) => {
     let passwordStrength = 0;
@@ -30,11 +30,10 @@ const PasswordIndicator = ( props ) => {
     }
 
     return passwordStrength;
-  }
-
+  };
   /**
-   * 
-   * @param {string} password 
+   *
+   * @param {string} password
    * @returns {object}
    */
   const passwordChecker = (password) => {
@@ -84,11 +83,7 @@ const PasswordIndicator = ( props ) => {
             </p>
           )}
         </div>
-        <progress
-          className={`indicator-bar strength-${val}`}
-          value={strength}
-          max="3"
-        />
+        <progress className={`indicator-bar strength-${val}`} value={strength} max="3" />
       </div>
     </>
   );

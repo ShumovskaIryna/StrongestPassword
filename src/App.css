@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-header {
   background: linear-gradient(180deg, #003c7c, #7f5d00);
   min-height: 100vh;
@@ -24,6 +23,6 @@
   padding: 40px 10px 0px 10px;
   width: 350px;
   border: 2px solid #222;
-  box-shadow: #111 0px 5px 15px;  
-  -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0005);
+  box-shadow: #111 0px 5px 15px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0005);
 }
