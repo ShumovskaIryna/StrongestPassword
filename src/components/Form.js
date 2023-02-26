@@ -59,6 +59,7 @@ const Form = () => {
 
   return (
     <div className="center">
+      <h4>Test password strength</h4>
       <div className="inputBox">
         <input
           type={type}

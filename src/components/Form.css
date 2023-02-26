@@ -3,8 +3,7 @@
     align-items: flex-start;
     font-size: 14px;
     width: 320px;
-    color:rgb(255, 230, 0);
-    filter: drop-shadow(0 0 3px rgb(255, 255, 255)) drop-shadow(0 0 3px rgb(0, 0, 0));
+    color:#666;
 }
 .inputBox{
     width: 330px;
@@ -37,4 +36,8 @@
   .inputBox span{
     cursor: pointer;
     color: #666;
+  }
+  h4 {
+    color: #666;
+    margin-bottom: 30px;
   }
